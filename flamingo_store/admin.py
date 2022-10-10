@@ -4,9 +4,8 @@ from model.models import Ticket
 
 
 class TicketAdmin(admin.ModelAdmin):
-    # ...
     list_display = (
-        'name', 'price', 'date',
+        'id', 'name', 'price', 'departure_time',
     )
 
 
