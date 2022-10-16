@@ -12,7 +12,7 @@ import requests
 from model.models import Ticket
 from .serializers import TicketSerializer
 
-body_s ={
+body_s = {
   "OTA_AirLowFareSearchRQ": {
     "OriginDestinationInformation": [
       {
@@ -77,13 +77,17 @@ body_s ={
 }
 
 
-def get_tickets(response):
-    print(json.loads(response.body))
+def get_tickets(response, kwargs):
+    token = ''
+    if kwargs:
+        token = kwargs['token']
+    else:
+        token = json.loads(response.body)['token']
     questionnaire_response = requests.post(
         url=f" https://api-crt.cert.havail.sabre.com/v3/offers/shop",
         data=json.dumps(body_s),
         params={
-            'Authorization': f"Bearer {json.loads(response.body)['token']}",
+            'Authorization': f"Bearer {token}",
             'Content-type': 'application/json',
             'Accept': 'text/plain'
         }
@@ -96,14 +100,14 @@ def get_tickets(response):
     for ticket in tickets:
         try:
             price = response['groupedItineraryResponse']['taxSummaryDescs'][ticket['id'] - 1]['amount']
-            currency = response['groupedItineraryResponse']['taxSummaryDescs'][ticket['id'] - 1]['currency'],
+            currency = response['groupedItineraryResponse']['taxSummaryDescs'][ticket['id'] - 1]['currency']
         except IndexError:
             price = 0
             currency = ''
         Ticket.objects.create(
             name=(
                 f"{ticket['departure']['city']}/{ticket['arrival']['city']}/"
-                f"{ticket['departure']['time']}"
+                f"{ticket['departure']['time'][0]}"
             ),
             price=price,
             currency=currency,
@@ -111,13 +115,13 @@ def get_tickets(response):
             flight_route=f"{ticket['departure']['city']} | {ticket['arrival']['city']}",
             departure_city=ticket['departure']['city'],
             departure_airport=ticket['departure']['airport'],
-            departure_time=ticket['departure']['time'],
+            departure_time=ticket['departure']['time'].split('+')[0],
             flight_route_time=time.strftime(
                 "%H:%M:%S", time.gmtime(ticket['elapsedTime'])
             ),
             arrival_city=ticket['arrival']['city'],
             arrival_airport=ticket['arrival']['airport'],
-            arrival_time=ticket['arrival']['time']
+            arrival_time=ticket['arrival']['time'].split('+')[0]
         )
     return HttpResponse(questionnaire_response)
 

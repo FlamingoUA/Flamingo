@@ -13,9 +13,9 @@ class Ticket(models.Model):
     departure_airport = models.CharField(max_length=255, null=True, blank=True)
     arrival_city = models.CharField(max_length=255, null=True, blank=True)
     arrival_airport = models.CharField(max_length=255, null=True, blank=True)
-    flight_route_time = models.CharField(max_length=255, null=True, blank=True)
-    departure_time = models.CharField(max_length=255, null=True, blank=True)
-    arrival_time = models.CharField(max_length=255, null=True, blank=True)
+    flight_route_time = models.TimeField(max_length=255, null=True, blank=True)
+    departure_time = models.TimeField(max_length=255, null=True, blank=True)
+    arrival_time = models.TimeField(max_length=255, null=True, blank=True)
     carrier = models.CharField(max_length=255, null=True, blank=True)
 
     def __str__(self):
