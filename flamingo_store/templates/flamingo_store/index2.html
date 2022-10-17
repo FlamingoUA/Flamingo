@@ -1,0 +1,546 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+
+
+    <!--CSS -->
+    <link rel="stylesheet" href="{% static 'css/style2.css' %}">
+
+
+    <!--DataPicker -->
+    <link rel="stylesheet" href="{% static 'datepicker/css/datepicker.min.css' %}">
+
+
+    <!--Font-Family -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+
+    <title>Flamingo</title>
+
+</head>
+<body>
+
+<!-- /.Header -->
+
+<header class="header">
+    <div class="container">
+
+        <div class="logo">
+            <div class="logo__inner">
+                <img class="logo__photo" src="{% static 'img/logo.png' %}" alt="Не знайдено">
+            </div>
+
+            <form class="choice">
+                <button class="button" type="button">Полетіть в потрібному напрямку</button>
+                <button class="button" type="button">Полетіть куди завгодно</button>
+            </form><!-- /.choice -->
+
+            <div class="logo__inner">
+                <div class="currency__item">
+                    <button class="currency" type="button">UAH</button>
+                    <button class="currency" type="button">RU</button>
+                </div>
+                <div class="logging__item">
+                    <img class="loggin__photo" src="{% static 'img/loggin.png' %}" alt="Не знайдено">
+                    <div class="loggin">Увійти</div>
+                </div>
+            </div><!-- /.logo__inner -->
+        </div><!-- /.logo -->
+
+    </div><!-- /.container -->
+</header>
+
+
+<!-- /.Intro -->
+
+<div class="intro">
+    <div class="container">
+        <form method="post">
+            {% csrf_token %}
+            <div class="coutry">
+
+            <div class="country__selection">
+                <div class="selection">
+                    <div class="selection__text">Звідки</div>
+
+                        <div class="dropdown">
+                            <div class="dropdown__inner">
+                                <input class="input__rout" type="text" id="name" name="name" required
+                                minlength="4" maxlength="8" size="10">
+                            </div>
+                            <ul class="dropdown__content"></ul>
+                        </div>
+
+                    <div class="route">
+                        <img class="route__img" src="{% static 'img/route.png' %}" alt="Не знайдено">
+                        <div class="route__text">Складний маршрут</div>
+                    </div>
+                </div><!-- /.selection -->
+
+                <div class="selection">
+                    <div class="selection__text">Куди</div>
+
+                       <div class="s-dropdown">
+                            <div class="second-dropdown">
+                                <input class="input__rout" type="text" id="name" name="name" required
+                                minlength="4" maxlength="8" size="10">
+                            </div>
+                            <ul class="s-dropdown__content"></ul>
+                        </div>
+
+                </div><!-- /.selection -->
+            </div><!-- /.country__selection -->
+
+            <div class="calendar">
+                <input class="selection__date datepicker-here" id="calendar" type="text" name="Date" placeholder="Виберіть дату">
+
+                <input class="selection__d datepicker-here" id="calendar" type="text" name="Date" placeholder="Виберіть дату">
+            </div><!-- /.calendar -->
+
+            <div class="passenger">
+
+                <div class="selection__text">Пасажир і клас</div>
+
+                    <div class="t-dropdown">
+                            <div class="third-dropdown">
+                                <span>Виберіть країну</span>
+                            </div>
+                            <ul class="t-content"></ul>
+                        </div>
+
+                    <div class="check__mark">
+                        <input class="check__click" type="checkbox" id="checkbox">
+                        <label class="check__text" for="checkbox">Тільки прямі перельоти</label>
+                    </div>
+
+            </div><!-- /.passenger -->
+
+            <div class="pos__button">
+            <button class="button__search" type="button">
+                <img class="search__img" src="{% static 'img/button__search.png' %}" alt="Не знайдено">
+                <input style="border: none; background-color: #EC4968;" class="search__text" type="submit" value="Знайти квитки">
+            </button>
+        </div>
+
+        </div><!-- /.coutry -->
+        </form>
+
+    </div><!-- /.container -->
+</div><!-- /.intro -->
+
+
+<!--Calendar datepicker -->
+
+<div class="datepickers-container" id="datepickers-container">
+    <div class="datepicker -bottom-left- -from-bottom-" style="left: -100000px; top: 564.8px;"><i class="datepicker--pointer"></i>
+        <nav class="datepicker--nav">
+            <div class="datepicker--nav-action" data-action="prev">
+                <svg>
+                    <path d="M 17,12 l -5,5 l 5,5"></path>
+                </svg>
+            </div>
+            <div class="datepicker--nav-title">Вересень, <i>2022</i></div>
+            <div class="datepicker--nav-action" data-action="next">
+                <svg>
+                    <path d="M 14,12 l 5,5 l -5,5"></path>
+                </svg>
+            </div>
+        </nav>
+        <div class="datepicker--content">
+            <div class="datepicker--days datepicker--body active">
+                <div class="datepicker--days-names">
+                    <div class="datepicker--day-name">Пн</div>
+                    <div class="datepicker--day-name">Вт</div>
+                    <div class="datepicker--day-name">Ср</div>
+                    <div class="datepicker--day-name">Чт</div>
+                    <div class="datepicker--day-name">Пт</div>
+                    <div class="datepicker--day-name -weekend-">Сб</div>
+                    <div class="datepicker--day-name -weekend-">Нд</div>
+                </div>
+                <div class="datepicker--cells datepicker--cells-days">
+                    <div class="datepicker--cell datepicker--cell-day -other-month-" data-date="29" data-month="7" data-year="2022">29</div>
+                    <div class="datepicker--cell datepicker--cell-day -other-month-" data-date="30" data-month="7" data-year="2022">30</div>
+                    <div class="datepicker--cell datepicker--cell-day -other-month-" data-date="31" data-month="7" data-year="2022">31</div>
+                    <div class="datepicker--cell datepicker--cell-day" data-date="1" data-month="8" data-year="2022">1</div>
+                    <div class="datepicker--cell datepicker--cell-day" data-date="2" data-month="8" data-year="2022">2</div>
+                    <div class="datepicker--cell datepicker--cell-day -weekend-" data-date="3" data-month="8" data-year="2022">3</div>
+                    <div class="datepicker--cell datepicker--cell-day -weekend-" data-date="4" data-month="8" data-year="2022">4</div>
+                    <div class="datepicker--cell datepicker--cell-day" data-date="5" data-month="8" data-year="2022">5</div>
+                    <div class="datepicker--cell datepicker--cell-day" data-date="6" data-month="8" data-year="2022">6</div>
+                    <div class="datepicker--cell datepicker--cell-day" data-date="7" data-month="8" data-year="2022">7</div>
+                    <div class="datepicker--cell datepicker--cell-day" data-date="8" data-month="8" data-year="2022">8</div>
+                    <div class="datepicker--cell datepicker--cell-day" data-date="9" data-month="8" data-year="2022">9</div>
+                    <div class="datepicker--cell datepicker--cell-day -weekend-" data-date="10" data-month="8" data-year="2022">10</div>
+                    <div class="datepicker--cell datepicker--cell-day -weekend-" data-date="11" data-month="8" data-year="2022">11</div>
+                    <div class="datepicker--cell datepicker--cell-day" data-date="12" data-month="8" data-year="2022">12</div>
+                    <div class="datepicker--cell datepicker--cell-day" data-date="13" data-month="8" data-year="2022">13</div>
+                    <div class="datepicker--cell datepicker--cell-day" data-date="14" data-month="8" data-year="2022">14</div>
+                    <div class="datepicker--cell datepicker--cell-day" data-date="15" data-month="8" data-year="2022">15</div>
+                    <div class="datepicker--cell datepicker--cell-day" data-date="16" data-month="8" data-year="2022">16</div>
+                    <div class="datepicker--cell datepicker--cell-day -weekend-" data-date="17" data-month="8" data-year="2022">17</div>
+                    <div class="datepicker--cell datepicker--cell-day -weekend-" data-date="18" data-month="8" data-year="2022">18</div>
+                    <div class="datepicker--cell datepicker--cell-day" data-date="19" data-month="8" data-year="2022">19</div>
+                    <div class="datepicker--cell datepicker--cell-day" data-date="20" data-month="8" data-year="2022">20</div>
+                    <div class="datepicker--cell datepicker--cell-day" data-date="21" data-month="8" data-year="2022">21</div>
+                    <div class="datepicker--cell datepicker--cell-day" data-date="22" data-month="8" data-year="2022">22</div>
+                    <div class="datepicker--cell datepicker--cell-day" data-date="23" data-month="8" data-year="2022">23</div>
+                    <div class="datepicker--cell datepicker--cell-day -weekend-" data-date="24" data-month="8" data-year="2022">24</div>
+                    <div class="datepicker--cell datepicker--cell-day -weekend-" data-date="25" data-month="8" data-year="2022">25</div>
+                    <div class="datepicker--cell datepicker--cell-day -current-" data-date="26" data-month="8" data-year="2022">26</div>
+                    <div class="datepicker--cell datepicker--cell-day" data-date="27" data-month="8" data-year="2022">27</div>
+                    <div class="datepicker--cell datepicker--cell-day" data-date="28" data-month="8" data-year="2022">28</div>
+                    <div class="datepicker--cell datepicker--cell-day" data-date="29" data-month="8" data-year="2022">29</div>
+                    <div class="datepicker--cell datepicker--cell-day" data-date="30" data-month="8" data-year="2022">30</div>
+                    <div class="datepicker--cell datepicker--cell-day -weekend- -other-month-" data-date="1" data-month="9" data-year="2022">1</div>
+                    <div class="datepicker--cell datepicker--cell-day -weekend- -other-month-" data-date="2" data-month="9" data-year="2022">2</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="datepicker -bottom-left- -from-bottom-" style="left: -100000px; top: 564.8px;"><i class="datepicker--pointer"></i>
+        <nav class="datepicker--nav">
+            <div class="datepicker--nav-action" data-action="prev">
+                <svg>
+                    <path d="M 17,12 l -5,5 l 5,5"></path>
+                </svg>
+            </div>
+            <div class="datepicker--nav-title">Вересень, <i>2022</i></div>
+            <div class="datepicker--nav-action" data-action="next">
+                <svg>
+                    <path d="M 14,12 l 5,5 l -5,5"></path>
+                </svg>
+            </div>
+        </nav>
+        <div class="datepicker--content">
+            <div class="datepicker--days datepicker--body active">
+                <div class="datepicker--days-names">
+                    <div class="datepicker--day-name">Пн</div>
+                    <div class="datepicker--day-name">Вт</div>
+                    <div class="datepicker--day-name">Ср</div>
+                    <div class="datepicker--day-name">Чт</div>
+                    <div class="datepicker--day-name">Пт</div>
+                    <div class="datepicker--day-name -weekend-">Сб</div>
+                    <div class="datepicker--day-name -weekend-">Нд</div>
+                </div>
+                <div class="datepicker--cells datepicker--cells-days">
+                    <div class="datepicker--cell datepicker--cell-day -other-month-" data-date="29" data-month="7" data-year="2022">29</div>
+                    <div class="datepicker--cell datepicker--cell-day -other-month-" data-date="30" data-month="7" data-year="2022">30</div>
+                    <div class="datepicker--cell datepicker--cell-day -other-month-" data-date="31" data-month="7" data-year="2022">31</div>
+                    <div class="datepicker--cell datepicker--cell-day" data-date="1" data-month="8" data-year="2022">1</div>
+                    <div class="datepicker--cell datepicker--cell-day" data-date="2" data-month="8" data-year="2022">2</div>
+                    <div class="datepicker--cell datepicker--cell-day -weekend-" data-date="3" data-month="8" data-year="2022">3</div>
+                    <div class="datepicker--cell datepicker--cell-day -weekend-" data-date="4" data-month="8" data-year="2022">4</div>
+                    <div class="datepicker--cell datepicker--cell-day" data-date="5" data-month="8" data-year="2022">5</div>
+                    <div class="datepicker--cell datepicker--cell-day" data-date="6" data-month="8" data-year="2022">6</div>
+                    <div class="datepicker--cell datepicker--cell-day" data-date="7" data-month="8" data-year="2022">7</div>
+                    <div class="datepicker--cell datepicker--cell-day" data-date="8" data-month="8" data-year="2022">8</div>
+                    <div class="datepicker--cell datepicker--cell-day" data-date="9" data-month="8" data-year="2022">9</div>
+                    <div class="datepicker--cell datepicker--cell-day -weekend-" data-date="10" data-month="8" data-year="2022">10</div>
+                    <div class="datepicker--cell datepicker--cell-day -weekend-" data-date="11" data-month="8" data-year="2022">11</div>
+                    <div class="datepicker--cell datepicker--cell-day" data-date="12" data-month="8" data-year="2022">12</div>
+                    <div class="datepicker--cell datepicker--cell-day" data-date="13" data-month="8" data-year="2022">13</div>
+                    <div class="datepicker--cell datepicker--cell-day" data-date="14" data-month="8" data-year="2022">14</div>
+                    <div class="datepicker--cell datepicker--cell-day" data-date="15" data-month="8" data-year="2022">15</div>
+                    <div class="datepicker--cell datepicker--cell-day" data-date="16" data-month="8" data-year="2022">16</div>
+                    <div class="datepicker--cell datepicker--cell-day -weekend-" data-date="17" data-month="8" data-year="2022">17</div>
+                    <div class="datepicker--cell datepicker--cell-day -weekend-" data-date="18" data-month="8" data-year="2022">18</div>
+                    <div class="datepicker--cell datepicker--cell-day" data-date="19" data-month="8" data-year="2022">19</div>
+                    <div class="datepicker--cell datepicker--cell-day" data-date="20" data-month="8" data-year="2022">20</div>
+                    <div class="datepicker--cell datepicker--cell-day" data-date="21" data-month="8" data-year="2022">21</div>
+                    <div class="datepicker--cell datepicker--cell-day" data-date="22" data-month="8" data-year="2022">22</div>
+                    <div class="datepicker--cell datepicker--cell-day" data-date="23" data-month="8" data-year="2022">23</div>
+                    <div class="datepicker--cell datepicker--cell-day -weekend-" data-date="24" data-month="8" data-year="2022">24</div>
+                    <div class="datepicker--cell datepicker--cell-day -weekend-" data-date="25" data-month="8" data-year="2022">25</div>
+                    <div class="datepicker--cell datepicker--cell-day -current-" data-date="26" data-month="8" data-year="2022">26</div>
+                    <div class="datepicker--cell datepicker--cell-day" data-date="27" data-month="8" data-year="2022">27</div>
+                    <div class="datepicker--cell datepicker--cell-day" data-date="28" data-month="8" data-year="2022">28</div>
+                    <div class="datepicker--cell datepicker--cell-day" data-date="29" data-month="8" data-year="2022">29</div>
+                    <div class="datepicker--cell datepicker--cell-day" data-date="30" data-month="8" data-year="2022">30</div>
+                    <div class="datepicker--cell datepicker--cell-day -weekend- -other-month-" data-date="1" data-month="9" data-year="2022">1</div>
+                    <div class="datepicker--cell datepicker--cell-day -weekend- -other-month-" data-date="2" data-month="9" data-year="2022">2</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--Table -->
+
+<span class="table">
+
+        <div class="table__inner">
+
+            <div class="table__item">
+                <img src="{% static 'img2/blok/1.png' %}" alt="">
+                <h3 class="table__t">Графік цін</h3>
+            </div>
+
+            <div class="table__item">
+                <img src="{% static 'img2/blok/2.png' %}" alt="">
+                <h3 class="table__t">Таблиця цін</h3>
+            </div>
+
+            <div class="table__it">
+                <div class="table__text">9 474 ₴</div>
+                <div class="table__text">9 апр. чт</div>
+            </div>
+
+            <div class="table__items">
+                <h3 class="table__text">-</h3>
+                <h3 class="table__text">10 апр. чт</h3>
+            </div>
+
+            <div class="table__items">
+                <div class="table__text">5 200 ₴</div>
+                <div class="table__text">11 апр. чт</div>
+            </div>
+
+            <div class="table__items">
+                <h3 class="table__text">-</h3>
+                <h3 class="table__text">12 апр. чт</h3>
+            </div>
+
+            <div class="table__items">
+                <div class="table__text">1 500 ₴</div>
+                <div class="table__text">13 апр. чт</div>
+            </div>
+
+            <div class="table__items">
+                <h3 class="table__text">-</h3>
+                <h3 class="table__text">14 апр. чт</h3>
+            </div>
+
+            <div class="table__items">
+                <div class="table__text">2 430 ₴</div>
+                <div class="table__text">15 апр. чт</div>
+            </div>
+
+        </div><!--table__inner -->
+
+        <button type="button" class="table__dropdown">
+            <div class="td__text">Показати</div>
+            <img class="table__img" src="{% static 'img2/blok/vector.png' %}" alt="">
+        </button>
+
+</span><!--table -->
+
+<div class="catalog">
+    <div class="container">
+
+        <div class="catalog__inner">
+            <div class="catalog__filters">
+                <div class="filters">
+
+                    <div class="catalog__box-a">
+                        <div class="catalog__text">Популярні фільтри</div>
+                        <div class="box__btn">
+                            <button type="button" class="catalog__btn">Belavia</button>
+                            <button type="button" class="catalog__btn">1 Пересадження</button>
+                            <button type="button" class="catalog__btn">Багаж та ручна поклажа</button>
+                        </div>
+                    </div>
+
+                    <hr class="filter__hr">
+
+                    <div class="catalog__box">
+                        <div class="cataloge__open">
+                            <div class="catalog__text">Багаж</div>
+                            <img src="{% static 'img2/tickets/Vector.png' %}" alt="" class="open">
+                        </div>
+
+                        <div class="mark">
+                            <input class="filter__click" type="checkbox" id="All__baggage">
+                            <label class="filter__text" for="All__baggage">Все</label>
+                        </div>
+
+                        <div class="mark">
+                            <input class="filter__click" type="checkbox" id="baggage">
+                            <label class="filter__text" for="baggage">Богаж та ручна поклажа</label>
+                        </div>
+
+                        <div class="mark">
+                            <input class="filter__click" type="checkbox" id="no__baggage">
+                            <label class="filter__text" for="no__baggage">Без багажу</label>
+                        </div>
+
+                    </div>
+
+                    <hr class="filter__hr">
+
+                    <div class="catalog__box">
+                        <div class="cataloge__open">
+                            <div class="catalog__text">Пересадки</div>
+                            <img src="{% static 'img2/tickets/Vector.png' %}" alt="" class="open">
+                        </div>
+
+                        <div class="mark">
+                            <input class="filter__click" type="checkbox" id="All__transplantation">
+                            <label class="filter__text" for="All__transplantation">Все</label>
+                        </div>
+
+                        <div class="mark">
+                            <input class="filter__click" type="checkbox" id="no__transplantation">
+                            <label class="filter__text" for="no__transplantation">Без пересаджень</label>
+                        </div>
+
+                        <div class="mark">
+                            <input class="filter__click" type="checkbox" id="s__transplantation">
+                            <label class="filter__text" for="s__transplantation">2 пересадження</label>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="catalog__content">
+
+                <div class="box__button">
+                    <button type="button" class="catalog__button">Найдешевший 17 04₴</button>
+                    <button type="button" class="catalog__button">Найшвидший 9404₴</button>
+                    <button type="button" class="catalog__button">Оптимальний 8500₴</button>
+                </div>
+
+                <!-- Here loop tickets -->
+                {% for page in page_obj %}
+                    <div class="catalog__tickets">
+                        <div class="catalog__item">
+
+                            <div class="tickets__inner">
+                                <div class="box__catalog">
+                                    <div class="box__ticket">
+                                        <a href="" class="tickets__link">
+                                            <img class="ticket__img" src="{% static 'img2/tickets/1.png' %}" alt="">
+                                        </a>
+                                    </div>
+
+                                    <div class="box__ticket">
+                                        <button class="link__btn">
+                                            <img class="link__img" src="{% static 'img2/tickets/2.png' %}" alt="" class="ticket__link">
+                                        </button>
+
+                                        <button class="link__btn">
+                                            <img class="link__img" src="{% static 'img2/tickets/3.png' %}" alt="" class="ticket__link">
+                                        </button>
+
+                                    </div>
+                                </div>
+
+                                <div class="info">
+
+                                    <div class="info__inner">
+                                        <div class="box__info">
+                                            <button class="ticket__info">
+                                                <img class="fasten" src="{% static 'img2/tickets/4.png' %}" alt="" class="fasten__img">
+                                            </button>
+                                            <h3 class="info__time">{{ page.departure_time|date:"H:i" }}</h3>
+                                        </div>
+
+                                        <h4 class="info__text">{{ page.departure_city }}</h4>
+                                        <h4 class="info__text">{{ page.date|date:'d M Y l'}}</h4>
+                                    </div>
+
+                                    <div class="info__inner">
+                                        <img class="plane__img" src="{% static 'img2/tickets/plane.png' %}" alt="" class="plane">
+                                        <hr class="hr">
+                                        <h3 class="info__t">{{ page.departure_city }}</h3>
+                                    </div>
+
+                                    <div class="info__inner info__inner-a">
+                                        <h3 class="text__info">Політ: {{ page.flight_route_time|date:"i:s" }}</h3>
+                                        <hr class="hr__h">
+                                        <h3 class="info__t"></h3>
+                                    </div>
+
+                                    <div class="info__inner info__inner-b">
+                                        <img class="plane__img" src="{% static 'img2/tickets/plane2.png' %}" alt="" class="plane">
+                                        <hr class="hr">
+                                        <h3 class="info__t">{{ page.arrival_city }}</h3>
+                                    </div>
+
+                                    <div class="info__inner info__inner-c">
+                                        <h3 class="info__time">{{ page.arrival_time|date:'H:i' }}</h3>
+                                        <h4 class="info__text">{{ page.arrival_city }}</h4>
+                                        <h4 class="info__text">{{ page.date|date:'d M Y l'}}</h4>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="cataloge__item-a">
+
+                            <div class="box__img">
+                                <img src="{% static 'img2/tickets/5.png' %}" alt="" class="baggage">
+                                <img src="{% static 'img2/tickets/6.png' %}" alt="" class="baggage">
+                                <h4 class="baggage__text">з багажем</h4>
+                            </div>
+
+                            <button class="baggage__btn">
+                                <h3 class="btn__text">
+                                    <p class="parag">Купити за {{ page.price }}$</p>
+                                </h3>
+                            </button>
+{#                            <h3 class="btn__suptext">на Belavia</h3>#}
+{##}
+{#                            <div class="baggage__suptext">#}
+{#                                <a href="" class="suptext">Tickets.ua</a>#}
+{#                                <h3 class="suptext">10 136₴</h3>#}
+{#                            </div>#}
+{##}
+{#                            <div class="baggage__suptext">#}
+{#                                <a href="" class="suptext">MEGO.travel</a>#}
+{#                                <h3 class="suptext">10 250₴</h3>#}
+{#                            </div>#}
+{##}
+{#                            <div class="baggage__suptext">#}
+{#                                <a href="" class="suptext">SuperKassa.ru</a>#}
+{#                                <h3 class="suptext">10 746₴</h3>#}
+{#                            </div>#}
+{##}
+{#                            <button class="btn__pluss">#}
+{#                                <ul class="drop">+ Ще 7 пропозицій</ul>#}
+{#                            </button>#}
+
+                        </div>
+
+                    </div>
+                {% endfor %}
+
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="pagination_bar">
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+            {% if page_obj.has_previous %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ page_obj.previous_page_number }}" tabindex="-1">Previous</a>
+                </li>
+            {% endif %}
+            {% if page_obj.has_next %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a>
+                </li>
+            {% endif %}
+      </ul>
+    </nav>
+</div>
+
+
+<!--Java-Script -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+</script>
+
+<script src="{% static 'app.js' %}"></script>
+
+<script src="{% static 'datepicker/js/datepicker.min.js' %}"></script>
+
+</body>
+</html>

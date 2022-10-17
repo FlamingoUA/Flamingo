@@ -1,24 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f8b514e4-bb51-4262-b648-8f4d667ce111" name="Changes" comment="Add request to Sabre">
-      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/69936924-3f2d-4feb-add5-ff341bd1fe20.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/flamingo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/flamingo.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_19_09_2022,_00_28_[Changes]1/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_19_09_2022__00_28__Changes_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_18_09_2022,_22_50_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_18_09_2022__22_50__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flamingo/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/flamingo/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flamingo/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/flamingo/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flamingo_api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/flamingo_api/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flamingo_store/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/flamingo_store/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-    </list>
+    <list default="true" id="f8b514e4-bb51-4262-b648-8f4d667ce111" name="Changes" comment="test test test" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -181,7 +164,7 @@
       <workItem from="1664959552474" duration="598000" />
       <workItem from="1665144561186" duration="16416000" />
       <workItem from="1665854574813" duration="3511000" />
-      <workItem from="1665940645591" duration="21781000" />
+      <workItem from="1665940645591" duration="22297000" />
     </task>
     <task id="LOCAL-00001" summary="init project">
       <created>1663532537445</created>
@@ -218,7 +201,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665428838485</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="test test test">
+      <created>1665963731719</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1665963731720</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -240,7 +230,8 @@
     <MESSAGE value="s" />
     <MESSAGE value="add req.txt" />
     <MESSAGE value="Add request to Sabre" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add request to Sabre" />
+    <MESSAGE value="test test test" />
+    <option name="LAST_COMMIT_MESSAGE" value="test test test" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

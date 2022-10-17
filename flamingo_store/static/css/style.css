@@ -1,0 +1,605 @@
+body {
+    margin: 0;
+    font-family: 'Montserrat';
+
+    font-size: 15px;
+    line-height: 1.6;
+    color: #fff;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    font-size: 10px;
+}
+
+
+/* Container */
+
+.container {
+    width: 100%;
+    max-width: 1350px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+
+/* Header */
+
+.header {
+    width: 100%;
+
+    padding-top: 30px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo__inner {
+    display: flex;
+
+    align-items: center;
+}
+
+.logo__text {
+    margin-left: 10px;
+
+    font-size: 22px;
+    font-weight: 500;
+    color: #fff;
+}
+
+
+/* Currency */
+
+.currency__item {
+    display: flex;
+
+    margin-right: 20px;
+}
+
+.currency {
+    position: relative;
+
+    font-size: 11px;
+    color: #fff;
+    background-color: #15246A;
+    border: 1px solid #374899;
+    border-radius: 50px;
+
+    padding: 5px 10px;
+}
+
+.currency:first-child {
+    padding-right: 7px;
+
+    border-right: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.currency:last-child {
+    padding-left: 5px;
+
+    border-left: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.currency:first-child:hover {
+    color: #fff;
+
+    background-color: rgba(113, 113, 113, 0.22);
+}
+
+.currency:last-child:hover {
+    color: #fff;
+
+    background-color: rgba(113, 113, 113, 0.22);;
+}
+
+.currency:first-child:after {
+    content: "";
+    display: block;
+
+    padding-left: 5px;
+
+    width: 13px;
+    height: 13px;
+    border-right: 2px solid #374899;
+
+    position: absolute;
+    top: 3px;
+    right: 0;
+    z-index: 1;
+
+    transform: rotate(20deg);
+}
+
+
+/* Logging */
+
+.logging__item {
+    display: flex;
+    align-items: center;
+}
+
+.loggin {
+    margin-left: 10px;
+
+    color: #fff;
+}
+
+
+/* Intro */
+
+.intro {
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    background: #15246A;
+    background-size: cover;
+}
+
+.intro__items {
+    margin-top: 230px;
+
+    text-align: center;
+}
+
+.intro__text {
+    margin-bottom: 15px;
+
+    font-size: 38px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.intro__suptext {
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+
+    margin-bottom: 40px;
+}
+
+
+/* Choice */
+
+.choice {
+    display: flex;
+    justify-content: center;
+
+    margin-bottom: 15px;
+}
+
+.button {
+    font-size: 13px;
+    font-weight: 700;
+
+    color: #fff;
+    background-color: #15246A;
+    padding: 7px 15px;
+
+    border-bottom: 1px solid #fff;
+    border-left: 1px solid #fff;
+    border-right: 1px solid #fff;
+    border-top: 1px solid #fff;
+
+    border-radius: 50px;
+
+    transition: background .3s linear;
+}
+
+.button:first-child {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.button:last-child {
+    border-left: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.button:first-child:hover {
+    color: #3C4159;
+
+    background-color: #fff;
+}
+
+.button:last-child:hover {
+    color: #3C4159;
+
+    background-color: #fff;
+}
+
+
+/* Coutry */
+
+.coutry {
+    display: flex;
+    justify-content: center;
+
+    margin-bottom: 10px;
+}
+
+.country__selection {
+    display: flex;
+    justify-content: center;
+
+    margin-top: 20px;
+}
+
+.selection:first-child {
+    margin-right: 1px;
+}
+
+.selection__text {
+    font-size: 13px;
+    font-weight: 500;
+
+    margin-bottom: 7px;
+    padding-left: 20px;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown__inner, .dropdown__item {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+}
+
+.dropdown__inner {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 18px;
+    text-align: left;
+
+    padding: 20px 45px 20px 20px;
+
+    border: 1px solid #fff;
+    background-color: #fff;
+    width: 209px;
+    height: 60px;
+    border-radius: 5px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+
+    color: #3C4159;
+
+    cursor: pointer;
+}
+
+.dropdown__inner.second {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 18px;
+    text-align: left;
+
+    padding: 20px 45px 20px 20px;
+
+    border: 1px solid #fff;
+    background-color: #fff;
+    width: 209px;
+    height: 60px;
+    border-radius: 5px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+
+    color: #3C4159;
+
+    cursor: pointer;
+}
+
+.dropdown__inner.third {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17px;
+    text-align: left;
+
+    padding: 20px 45px 20px 20px;
+
+    color: #3C4159;
+
+    border: 1px solid #fff;
+    width: 229px;
+    height: 60px;
+
+    border-radius: 5px;
+
+    background-color: #fff;
+
+    cursor: pointer;
+}
+
+.dropdown__content {
+    display: none;
+
+    position: absolute;
+    top: 60px;
+    left: 0;
+    z-index: 1;
+
+    border: 1px solid #fff;
+    width: 283px    ;
+    border-radius: 5px;
+    background: #fff;
+}
+
+.dropdown-active {
+    display: block;
+}
+
+.dropdown__item {
+    height: 42px;
+
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17px;
+    text-align: left;
+    color: #3C4159;
+
+    padding: 10px 20px 10px 20px;
+
+    cursor: pointer;
+}
+
+.dropdown__item:hover {
+    background-color: #f2f2f2;
+}
+
+.route {
+    display: flex;
+
+    margin-top: 15px;
+}
+
+.route__img {
+    width: 14px;
+    height: 16px;
+
+    margin-top: 3px;
+    margin-right: 5px;
+}
+
+.route__text {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+
+/* Calendar */
+
+.calendar {
+    display: flex;
+    margin-left: 10px;
+    margin-top: 48px;
+    position: relative;
+}
+
+.calendar:before {
+    content: "";
+    display: block;
+    position: absolute;
+
+    border: 1px solid #E2E4EF;
+    width: 25px;
+
+    right: 184px;
+    top: 30px;
+    z-index: 1;
+
+    transform: rotate(90deg);
+}
+
+.selection__date {
+    font-size: 15px;
+    font-weight: 500;
+
+    padding: 20px 20px 20px 20px;
+
+    color: #3C4159;
+
+    border: 1px solid #fff;
+    width: 199px;
+    height: 60px;
+
+    border-radius: 5px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    background-color: #fff;
+}
+
+.selection__d {
+    font-size: 15px;
+    font-weight: 500;
+
+    padding: 20px 20px 20px 20px;
+
+    color: #3C4159;
+
+    border: 1px solid #fff;
+    width: 196px;
+    height: 60px;
+
+    border-radius: 5px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    background-color: #fff;
+}
+
+
+/* Passenger */
+
+.passenger {
+    margin: 20px 0;
+    margin-left: 10px;
+}
+
+.check__mark {
+    display: flex;
+    position: relative;
+
+    margin-top: 15px;
+}
+
+.check__click {
+    position: absolute;
+
+    opacity: 0;
+
+    width: 16px;
+    height: 16px;
+    border-radius: 3px;
+
+    left: -4px;
+    top: 0;
+    z-index: 1;
+
+    cursor: pointer;
+}
+
+.check__text {
+    padding-left: 20px;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    cursor: pointer;
+}
+
+.check__text:before {
+    content: "";
+    display: block;
+
+    border: 1px solid #fff;
+    width: 16px;
+    height: 16px;
+    border-radius: 3px;
+
+    position: absolute;
+    left: 0;
+    top: 3px;
+    z-index: 1;
+}
+
+
+
+.check__click:checked + .check__text:before {
+    display: none;
+}
+
+.check__click:checked {
+    opacity: 1;
+}
+
+
+.pos__button {
+    text-align: center;
+}
+
+.button__search {
+    position: relative;
+
+    width: 214px;
+    height: 60px;
+
+    border: 0;
+    border-radius: 50px;
+
+    background-color: #EC4968;
+
+    transition: background .2s linear;
+}
+
+.button__search:hover {
+    background: #cb3753;
+}
+
+.search__img {
+    position: absolute;
+
+    left: 31px;
+    top: 17px;
+    z-index: 1;
+}
+
+.search__text {
+    padding-left: 20px;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    color: #fff;
+}
+
+.input__rout{
+    padding: 20px 10px 20px 20px;
+    border: 0;
+    outline: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
